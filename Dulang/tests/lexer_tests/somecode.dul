@@ -1,0 +1,75 @@
+common_styles = object{
+    .linear = object{
+        ."display" = "flex"
+        ."flex" = "1 0 auto"
+        ."flex-direction" = "row"
+    }
+    .vertical = object{ ->
+        ."display" = "flex"
+        ."flex" = "1 0 auto"
+        ."flex-direction" = "column"
+    }
+    .style = {
+        display: "flex",
+        value: null
+    }
+}
+
+fun node(){
+    return object(view){
+        .tag = "div"
+        .children = array()
+        .style = object()
+        .attrs = object()
+        .hooks = object()
+    }
+}
+view = object{
+
+    fun this.on( event ){
+        _ = this
+        return { handler->
+            _.hooks[event] = handler
+        }
+    }
+    
+    fun this.attr(k, v){
+        .attrs[k] = v
+    }
+    
+    fun this.view ( init_func ){
+        templ = node()
+        .children.append(templ(init_func))
+        return templ
+    }
+    
+    fun this.render(){
+        style_repr = "\""
+        for prop in .style {
+            style_repr += "$0:$1;".format(prop, this.style[prop])
+        }
+        style_repr += "\""
+        children_repr = ""
+        if .text {
+            children_repr += .text
+        }
+        for child in .children {
+            children_repr += child.render()
+        }
+        attr_repr = ""
+        hook_head = ""
+        hook_repr = "<script>"
+        for event in .hooks {
+            hook_head += " on$0=\"$0$1()\"".format(event, id(this))
+            hook_repr += "let $0$1 = $2\n".format(event, id(this), toJS(.hooks[event]))
+        }
+        hook_repr += "</script>"
+        if hook_repr == "<script></script>" {
+            hook_repr = ""
+        }
+        for attr in .attrs {
+            attr_repr += "$0='$1'".format(attr, .attrs[attr])
+        }
+        return "<$0 id=\"$4\" $5 $3 style=$1>$6 $2</$0>".format(.tag, style_repr, children_repr, attr_repr, id(this), hook_head, hook_repr)
+    }
+}

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9D38239723F2D7CA00413971 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D38239623F2D7CA00413971 /* main.c */; };
+		9D3823AD23F5A3AD00413971 /* lexer.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D3823AC23F5A3AC00413971 /* lexer.c */; };
+		9D3823B023F5A3B900413971 /* astgen.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D3823AF23F5A3B900413971 /* astgen.c */; };
+		9D3823B323F5A3C500413971 /* bytecodegen.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D3823B223F5A3C500413971 /* bytecodegen.c */; };
+		9D74E16223F9A74C000C7FA2 /* compilerr.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D74E16123F9A74C000C7FA2 /* compilerr.c */; };
+		9D74E16523F9A82F000C7FA2 /* process_filename.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D74E16423F9A82F000C7FA2 /* process_filename.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,34 @@
 /* Begin PBXFileReference section */
 		9D38239323F2D7CA00413971 /* Dulang */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dulang; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D38239623F2D7CA00413971 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		9D3823A423F5A35500413971 /* number.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = number.h; sourceTree = "<group>"; };
+		9D3823A523F5A35A00413971 /* boolean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boolean.h; sourceTree = "<group>"; };
+		9D3823A623F5A36300413971 /* string.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string.h; sourceTree = "<group>"; };
+		9D3823A723F5A36D00413971 /* tuple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tuple.h; sourceTree = "<group>"; };
+		9D3823A823F5A37300413971 /* array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		9D3823A923F5A38500413971 /* object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		9D3823AA23F5A38E00413971 /* shape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shape.h; sourceTree = "<group>"; };
+		9D3823AB23F5A39D00413971 /* lexer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lexer.h; sourceTree = "<group>"; };
+		9D3823AC23F5A3AC00413971 /* lexer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lexer.c; sourceTree = "<group>"; };
+		9D3823AE23F5A3B900413971 /* astgen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = astgen.h; sourceTree = "<group>"; };
+		9D3823AF23F5A3B900413971 /* astgen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = astgen.c; sourceTree = "<group>"; };
+		9D3823B123F5A3C500413971 /* bytecodegen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bytecodegen.h; sourceTree = "<group>"; };
+		9D3823B223F5A3C500413971 /* bytecodegen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bytecodegen.c; sourceTree = "<group>"; };
+		9D3823B423F5A3E700413971 /* function.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = function.h; sourceTree = "<group>"; };
+		9D3823B523F5A47300413971 /* dict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dict.h; sourceTree = "<group>"; };
+		9D3823B623F5EBB000413971 /* dulang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dulang.h; sourceTree = "<group>"; };
+		9D74E15723F71B34000C7FA2 /* main.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.dul; sourceTree = "<group>"; };
+		9D74E15B23F720CC000C7FA2 /* somecode.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = somecode.dul; sourceTree = "<group>"; };
+		9D74E15C23F735B1000C7FA2 /* front */ = {isa = PBXFileReference; lastKnownFileType = text; path = front; sourceTree = "<group>"; };
+		9D74E15D23F73929000C7FA2 /* lexer_test_main.dul */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lexer_test_main.dul; sourceTree = "<group>"; };
+		9D74E15E23F73929000C7FA2 /* lexer_test_somecode.dul */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lexer_test_somecode.dul; sourceTree = "<group>"; };
+		9D74E15F23F73929000C7FA2 /* lexer_test_front */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lexer_test_front; sourceTree = "<group>"; };
+		9D74E16023F9A73F000C7FA2 /* compilerr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compilerr.h; sourceTree = "<group>"; };
+		9D74E16123F9A74C000C7FA2 /* compilerr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = compilerr.c; sourceTree = "<group>"; };
+		9D74E16323F9A82F000C7FA2 /* process_filename.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = process_filename.h; sourceTree = "<group>"; };
+		9D74E16423F9A82F000C7FA2 /* process_filename.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = process_filename.c; sourceTree = "<group>"; };
+		9D74E16623F9E547000C7FA2 /* formal_grammatics.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = formal_grammatics.md; sourceTree = "<group>"; };
+		9D74E16A23FA017E000C7FA2 /* index.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = index.dul; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +90,117 @@
 		9D38239523F2D7CA00413971 /* Dulang */ = {
 			isa = PBXGroup;
 			children = (
+				9D3823A223F2D9AA00413971 /* tests */,
+				9D3823A023F2D83700413971 /* runtimeEnv */,
+				9D38239F23F2D82700413971 /* compiler */,
+				9D38239E23F2D81700413971 /* objects */,
+				9D38239D23F2D7FD00413971 /* include */,
 				9D38239623F2D7CA00413971 /* main.c */,
+				9D3823B623F5EBB000413971 /* dulang.h */,
 			);
 			path = Dulang;
+			sourceTree = "<group>";
+		};
+		9D38239D23F2D7FD00413971 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9D3823A423F5A35500413971 /* number.h */,
+				9D3823A523F5A35A00413971 /* boolean.h */,
+				9D3823A623F5A36300413971 /* string.h */,
+				9D3823A723F5A36D00413971 /* tuple.h */,
+				9D3823A823F5A37300413971 /* array.h */,
+				9D3823A923F5A38500413971 /* object.h */,
+				9D3823AA23F5A38E00413971 /* shape.h */,
+				9D3823B423F5A3E700413971 /* function.h */,
+				9D3823B523F5A47300413971 /* dict.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9D38239E23F2D81700413971 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		9D38239F23F2D82700413971 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				9D3823AB23F5A39D00413971 /* lexer.h */,
+				9D3823AC23F5A3AC00413971 /* lexer.c */,
+				9D3823AE23F5A3B900413971 /* astgen.h */,
+				9D3823AF23F5A3B900413971 /* astgen.c */,
+				9D3823B123F5A3C500413971 /* bytecodegen.h */,
+				9D3823B223F5A3C500413971 /* bytecodegen.c */,
+				9D74E16023F9A73F000C7FA2 /* compilerr.h */,
+				9D74E16123F9A74C000C7FA2 /* compilerr.c */,
+				9D74E16323F9A82F000C7FA2 /* process_filename.h */,
+				9D74E16423F9A82F000C7FA2 /* process_filename.c */,
+				9D74E16623F9E547000C7FA2 /* formal_grammatics.md */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		9D3823A023F2D83700413971 /* runtimeEnv */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = runtimeEnv;
+			sourceTree = "<group>";
+		};
+		9D3823A223F2D9AA00413971 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				9D74E16723FA0145000C7FA2 /* web-app */,
+				9D74E15A23F71E1B000C7FA2 /* test_results */,
+				9D74E15923F71DE8000C7FA2 /* lexer_tests */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		9D74E15923F71DE8000C7FA2 /* lexer_tests */ = {
+			isa = PBXGroup;
+			children = (
+				9D74E15723F71B34000C7FA2 /* main.dul */,
+				9D74E15B23F720CC000C7FA2 /* somecode.dul */,
+				9D74E15C23F735B1000C7FA2 /* front */,
+			);
+			path = lexer_tests;
+			sourceTree = "<group>";
+		};
+		9D74E15A23F71E1B000C7FA2 /* test_results */ = {
+			isa = PBXGroup;
+			children = (
+				9D74E15F23F73929000C7FA2 /* lexer_test_front */,
+				9D74E15D23F73929000C7FA2 /* lexer_test_main.dul */,
+				9D74E15E23F73929000C7FA2 /* lexer_test_somecode.dul */,
+			);
+			path = test_results;
+			sourceTree = "<group>";
+		};
+		9D74E16723FA0145000C7FA2 /* web-app */ = {
+			isa = PBXGroup;
+			children = (
+				9D74E16823FA014F000C7FA2 /* source */,
+			);
+			path = "web-app";
+			sourceTree = "<group>";
+		};
+		9D74E16823FA014F000C7FA2 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				9D74E16923FA0164000C7FA2 /* pages */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		9D74E16923FA0164000C7FA2 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				9D74E16A23FA017E000C7FA2 /* index.dul */,
+			);
+			path = pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D3823AD23F5A3AD00413971 /* lexer.c in Sources */,
 				9D38239723F2D7CA00413971 /* main.c in Sources */,
+				9D74E16523F9A82F000C7FA2 /* process_filename.c in Sources */,
+				9D3823B023F5A3B900413971 /* astgen.c in Sources */,
+				9D3823B323F5A3C500413971 /* bytecodegen.c in Sources */,
+				9D74E16223F9A74C000C7FA2 /* compilerr.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,21 @@
+fun generateCSS(obj){
+    style_repr = ""
+    for key in obj{
+       style_repr += "$0:$1".format(key, obj[key])
+    }
+    return style_repr
+}
+
+view_proto = {
+    children: [],
+    style: {},
+    tag: "div",
+    fun render() {
+        class = generateCSS(.style)
+        body = .children.reduce{ acc, child ->
+            return acc + child.render()
+        }
+        return "<$0 style='$1'>$2</$0>".format(.tag, class, body)
+    }
+}
+
