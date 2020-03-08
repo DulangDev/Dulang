@@ -8,13 +8,12 @@
 
 #include <stdio.h>
 #include "dulang.h"
-#include "lexer.h"
-#include "astgen.h"
+#include "compiler/astgen.h"
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
 #include "compiler/asttest.h"
-#include "bytecodegen.h"
+#include "compiler/bytecodegen.h"
 #include "runtimeEnv/execeasy.h"
 void test_lexer(){
     DIR *d;

@@ -21,6 +21,7 @@
 		9DE5F2E024129A6A00C46AEF /* object.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2DE24129A6A00C46AEF /* object.c */; };
 		9DE5F2E324129B7300C46AEF /* type.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2E224129B7300C46AEF /* type.c */; };
 		9DE73C2B2415802E003C7252 /* execeasy.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE73C2A2415802E003C7252 /* execeasy.c */; };
+		9DE73C2D24158FDA003C7252 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 9DE73C2C24158FDA003C7252 /* Makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +85,7 @@
 		9DE5F2E224129B7300C46AEF /* type.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = type.c; sourceTree = "<group>"; };
 		9DE73C292415802E003C7252 /* execeasy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = execeasy.h; sourceTree = "<group>"; };
 		9DE73C2A2415802E003C7252 /* execeasy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = execeasy.c; sourceTree = "<group>"; };
+		9DE73C2C24158FDA003C7252 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				9D38239D23F2D7FD00413971 /* include */,
 				9D38239623F2D7CA00413971 /* main.c */,
 				9D3823B623F5EBB000413971 /* dulang.h */,
+				9DE73C2C24158FDA003C7252 /* Makefile */,
 			);
 			path = Dulang;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE73C2D24158FDA003C7252 /* Makefile in Sources */,
 				9DE5F2E324129B7300C46AEF /* type.c in Sources */,
 				9DE5F2DA240E981300C46AEF /* coro_sheduler.c in Sources */,
 				9DE73C2B2415802E003C7252 /* execeasy.c in Sources */,

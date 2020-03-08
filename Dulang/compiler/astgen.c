@@ -61,7 +61,7 @@ astnode * astnode_val  ( enum astnodetype type, int capacity, int children, va_l
     }
     return result;
 }
-astnode * astparse_file(const char * fname){
+astnode * astparse_file_(const char * fname){
     lexem_array array = parse_file(fname);
     if(array.lexems == 0){
         return NULL;
@@ -79,7 +79,7 @@ static int is_closing_lexem (lexem l){
 }
 
 //important: walks with the start of the text: the concern of removing { and end-of-lines lie on handlers
-astnode * astparse_many(lexem_iterator * iter){
+astnode * astparse_many_(lexem_iterator * iter){
     astnode * node = astnode_new(COMPOUND, 300, 0);
     while( !is_closing_lexem( get_current(iter) ) ){
         astnode * n = astparse_stat(iter);
@@ -104,7 +104,7 @@ static enum astnodetype assign_type(lexem _l) {
     } else return 0;
 }
 
-astnode * astparse_stat(lexem_iterator * iter){
+astnode * astparse_stat_(lexem_iterator * iter){
     lexem curr = get_current(iter);
     if(curr.type == SPECIAL){
         switch (curr.special_type) {
@@ -146,6 +146,6 @@ int lexem_occures_till_eol(lexem_iterator * iter, enum splexems type){
     return 0;
 }
 
-astnode * astparse_lval(lexem_iterator*iter){
+astnode * astparse_lval_(lexem_iterator*iter){
     return 0;
 }
