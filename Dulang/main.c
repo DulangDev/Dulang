@@ -12,7 +12,10 @@
 #include "astgen.h"
 #include <dirent.h>
 #include <stdlib.h>
-
+#include <string.h>
+#include "compiler/asttest.h"
+#include "bytecodegen.h"
+#include "runtimeEnv/execeasy.h"
 void test_lexer(){
     DIR *d;
     struct dirent *dir;
@@ -38,7 +41,15 @@ void test_lexer(){
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    test_lexer();
-    astnode * main = astparse_file("/Users/jernicozz/Dulang/Dulang/tests/lexer_tests/main.dul");
+    //test_lexer();
+    test_ast_parse("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
+    internal_code code = new_code();
+    astnode * root = astparse_file("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
+    load_module(&code, root);
+    print_code(&code, stdout, 0);
+    context * ctx = init_context();
+    start_frame(ctx, &code);
+    exec_ctx(ctx);
+    
     return 0;
 }

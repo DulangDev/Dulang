@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		9D38239723F2D7CA00413971 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D38239623F2D7CA00413971 /* main.c */; };
 		9D3823AD23F5A3AD00413971 /* lexer.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D3823AC23F5A3AC00413971 /* lexer.c */; };
-		9D3823B023F5A3B900413971 /* astgen.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D3823AF23F5A3B900413971 /* astgen.c */; };
 		9D3823B323F5A3C500413971 /* bytecodegen.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D3823B223F5A3C500413971 /* bytecodegen.c */; };
 		9D74E16223F9A74C000C7FA2 /* compilerr.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D74E16123F9A74C000C7FA2 /* compilerr.c */; };
 		9D74E16523F9A82F000C7FA2 /* process_filename.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D74E16423F9A82F000C7FA2 /* process_filename.c */; };
+		9DE5F2CA240C621B00C46AEF /* asteasy.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2C9240C621B00C46AEF /* asteasy.c */; };
+		9DE5F2CC240C624100C46AEF /* astwork.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2CB240C624100C46AEF /* astwork.c */; };
+		9DE5F2CF240C6B1600C46AEF /* asttest.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2CE240C6B1600C46AEF /* asttest.c */; };
+		9DE5F2D4240DB21900C46AEF /* asttype_pred.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2D3240DB21900C46AEF /* asttype_pred.c */; };
+		9DE5F2D7240DC86B00C46AEF /* frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2D6240DC86B00C46AEF /* frame.c */; };
+		9DE5F2DA240E981300C46AEF /* coro_sheduler.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2D9240E981300C46AEF /* coro_sheduler.c */; };
+		9DE5F2E024129A6A00C46AEF /* object.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2DE24129A6A00C46AEF /* object.c */; };
+		9DE5F2E324129B7300C46AEF /* type.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5F2E224129B7300C46AEF /* type.c */; };
+		9DE73C2B2415802E003C7252 /* execeasy.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE73C2A2415802E003C7252 /* execeasy.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +66,24 @@
 		9D74E16423F9A82F000C7FA2 /* process_filename.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = process_filename.c; sourceTree = "<group>"; };
 		9D74E16623F9E547000C7FA2 /* formal_grammatics.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = formal_grammatics.md; sourceTree = "<group>"; };
 		9D74E16A23FA017E000C7FA2 /* index.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = index.dul; sourceTree = "<group>"; };
+		9DE5F2C8240C614200C46AEF /* grammar 2.0.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "grammar 2.0.md"; sourceTree = "<group>"; };
+		9DE5F2C9240C621B00C46AEF /* asteasy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asteasy.c; sourceTree = "<group>"; };
+		9DE5F2CB240C624100C46AEF /* astwork.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = astwork.c; sourceTree = "<group>"; };
+		9DE5F2CD240C6B1600C46AEF /* asttest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asttest.h; sourceTree = "<group>"; };
+		9DE5F2CE240C6B1600C46AEF /* asttest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asttest.c; sourceTree = "<group>"; };
+		9DE5F2D1240C6BF000C46AEF /* main.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.dul; sourceTree = "<group>"; };
+		9DE5F2D2240DB21900C46AEF /* asttype_pred.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asttype_pred.h; sourceTree = "<group>"; };
+		9DE5F2D3240DB21900C46AEF /* asttype_pred.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asttype_pred.c; sourceTree = "<group>"; };
+		9DE5F2D5240DC86B00C46AEF /* frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = frame.h; sourceTree = "<group>"; };
+		9DE5F2D6240DC86B00C46AEF /* frame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = frame.c; sourceTree = "<group>"; };
+		9DE5F2D8240E981300C46AEF /* coro_sheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coro_sheduler.h; sourceTree = "<group>"; };
+		9DE5F2D9240E981300C46AEF /* coro_sheduler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = coro_sheduler.c; sourceTree = "<group>"; };
+		9DE5F2DE24129A6A00C46AEF /* object.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = object.c; sourceTree = "<group>"; };
+		9DE5F2DF24129A6A00C46AEF /* object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		9DE5F2E124129B7300C46AEF /* type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = type.h; sourceTree = "<group>"; };
+		9DE5F2E224129B7300C46AEF /* type.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = type.c; sourceTree = "<group>"; };
+		9DE73C292415802E003C7252 /* execeasy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = execeasy.h; sourceTree = "<group>"; };
+		9DE73C2A2415802E003C7252 /* execeasy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = execeasy.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +146,10 @@
 		9D38239E23F2D81700413971 /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				9DE5F2DE24129A6A00C46AEF /* object.c */,
+				9DE5F2DF24129A6A00C46AEF /* object.h */,
+				9DE5F2E124129B7300C46AEF /* type.h */,
+				9DE5F2E224129B7300C46AEF /* type.c */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -138,6 +168,13 @@
 				9D74E16323F9A82F000C7FA2 /* process_filename.h */,
 				9D74E16423F9A82F000C7FA2 /* process_filename.c */,
 				9D74E16623F9E547000C7FA2 /* formal_grammatics.md */,
+				9DE5F2C8240C614200C46AEF /* grammar 2.0.md */,
+				9DE5F2C9240C621B00C46AEF /* asteasy.c */,
+				9DE5F2CB240C624100C46AEF /* astwork.c */,
+				9DE5F2CD240C6B1600C46AEF /* asttest.h */,
+				9DE5F2CE240C6B1600C46AEF /* asttest.c */,
+				9DE5F2D2240DB21900C46AEF /* asttype_pred.h */,
+				9DE5F2D3240DB21900C46AEF /* asttype_pred.c */,
 			);
 			path = compiler;
 			sourceTree = "<group>";
@@ -145,6 +182,12 @@
 		9D3823A023F2D83700413971 /* runtimeEnv */ = {
 			isa = PBXGroup;
 			children = (
+				9DE5F2D5240DC86B00C46AEF /* frame.h */,
+				9DE5F2D6240DC86B00C46AEF /* frame.c */,
+				9DE5F2D8240E981300C46AEF /* coro_sheduler.h */,
+				9DE5F2D9240E981300C46AEF /* coro_sheduler.c */,
+				9DE73C292415802E003C7252 /* execeasy.h */,
+				9DE73C2A2415802E003C7252 /* execeasy.c */,
 			);
 			path = runtimeEnv;
 			sourceTree = "<group>";
@@ -152,6 +195,7 @@
 		9D3823A223F2D9AA00413971 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				9DE5F2D0240C6BE400C46AEF /* asteasy */,
 				9D74E16723FA0145000C7FA2 /* web-app */,
 				9D74E15A23F71E1B000C7FA2 /* test_results */,
 				9D74E15923F71DE8000C7FA2 /* lexer_tests */,
@@ -201,6 +245,14 @@
 				9D74E16A23FA017E000C7FA2 /* index.dul */,
 			);
 			path = pages;
+			sourceTree = "<group>";
+		};
+		9DE5F2D0240C6BE400C46AEF /* asteasy */ = {
+			isa = PBXGroup;
+			children = (
+				9DE5F2D1240C6BF000C46AEF /* main.dul */,
+			);
+			path = asteasy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,11 +312,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE5F2E324129B7300C46AEF /* type.c in Sources */,
+				9DE5F2DA240E981300C46AEF /* coro_sheduler.c in Sources */,
+				9DE73C2B2415802E003C7252 /* execeasy.c in Sources */,
 				9D3823AD23F5A3AD00413971 /* lexer.c in Sources */,
+				9DE5F2D4240DB21900C46AEF /* asttype_pred.c in Sources */,
 				9D38239723F2D7CA00413971 /* main.c in Sources */,
+				9DE5F2CF240C6B1600C46AEF /* asttest.c in Sources */,
 				9D74E16523F9A82F000C7FA2 /* process_filename.c in Sources */,
-				9D3823B023F5A3B900413971 /* astgen.c in Sources */,
+				9DE5F2D7240DC86B00C46AEF /* frame.c in Sources */,
 				9D3823B323F5A3C500413971 /* bytecodegen.c in Sources */,
+				9DE5F2CC240C624100C46AEF /* astwork.c in Sources */,
+				9DE5F2CA240C621B00C46AEF /* asteasy.c in Sources */,
+				9DE5F2E024129A6A00C46AEF /* object.c in Sources */,
 				9D74E16223F9A74C000C7FA2 /* compilerr.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -147,5 +147,5 @@ int lexem_occures_till_eol(lexem_iterator * iter, enum splexems type){
 }
 
 astnode * astparse_lval(lexem_iterator*iter){
-    
+    return 0;
 }

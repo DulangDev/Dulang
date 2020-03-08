@@ -10,7 +10,7 @@
 #include "process_filename.h"
 #include <stdio.h>
 #include <stdarg.h>
-
+#include <sched.h>
 struct linecords{
     int lineno;
     int linepos;
@@ -28,6 +28,7 @@ static struct linecords count_line_coords(FILE * f, int offset){
             last_line_begin = i;
         }
     }
+    SCHED_FIFO;
     free(mem);
     struct linecords cords = {
         lineno,

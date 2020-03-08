@@ -55,6 +55,50 @@ enum astnodetype{
     IS,
     EMPTY_STR
 };
+static const char * asttype_repr [] = {
+        "SUBSCR",
+        "COMPOUND",
+        "ASSIGN",
+        "INPLADD",
+        "INPLSUB",
+        "INPLMULT",
+        "INPLDIV",
+        "MKTUPLE",
+        "LESSTHAN",
+        "LESSEQ",
+        "GREATERTHAN",
+        "GREATEREQ",
+        "EQUAL",
+        "NEQUAL",
+        "LOGOR",
+        "LOGAND",
+        "LOGNOT",
+        "FUNCCALL",
+        "FUNCDEF",
+        "WRITE",
+        "IFSTAT",
+        "PLUS",
+        "MINUS",
+        "MULT",
+        "DIV",
+        "NUMLIT",
+        "STRLIT",
+        "BOOLLIT",
+        "NAME",
+        "INOP",
+        "FORSTAT",
+        "ASYNC",
+        "NULL_",
+        "DULRETURN",
+        "MODULE",
+        "UNPACK_ITER",
+        "IMPORT",
+        "WHILE",
+        "IS",
+        "EMPTY_STR"
+};
+
+
 
 typedef struct _an{
     enum astnodetype type;
@@ -77,7 +121,7 @@ lexem get_current   (lexem_iterator * iter);
 lexem get_next      (lexem_iterator * iter);
 
 int lexem_occures_till_eol(lexem_iterator * iter, enum splexems type);
-
+void ast_add_child (astnode * parent, astnode * child);
 
 astnode * astnode_new  ( enum astnodetype type, int capacity, int children, ... );
 astnode * astnode_val  ( enum astnodetype type, int capacity, int children, va_list );
@@ -119,6 +163,8 @@ astnode * astparse_json(lexem_iterator*);
 astnode * astparse_sube(lexem_iterator*, enum splexems close);
 
 astnode * astparse_xml_(lexem_iterator*);
+
+int count_register_count(astnode * node);
 
 void print_astnode(astnode*, FILE*, int offset);
 

@@ -14,7 +14,7 @@
 typedef struct dulobject{
     int refcount;
     struct dulobject * prototype;
-} object;
+} IntObject;
 
 
 #endif /* object_h */
