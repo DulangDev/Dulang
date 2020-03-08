@@ -12,6 +12,11 @@
 #define STAT_MASK 0xfffffffffffffff8
 #define MAX(x, y) (x) > (y)? (x):(y);
 
+
+#ifndef strdup
+#define strdup(str) ({char * nstr = malloc(strlen(str) + 1); strcpy(nstr, str); str;})
+#endif
+
 internal_code new_code(void){
     internal_code code;
     code.name_count = 0;
