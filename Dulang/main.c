@@ -41,7 +41,9 @@ void test_lexer(){
 int main(int argc, const char * argv[]) {
     // insert code here...
     //test_lexer();
-    test_ast_parse("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
+     char namebuf [2000];
+    sprintf(namebuf, "%s/dulang/Dulang/tests/asteasy/main.dul", getenv("HOME"));
+    test_ast_parse(namebuf);
     internal_code code = new_code();
     astnode * root = astparse_file("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
     load_module(&code, root);
