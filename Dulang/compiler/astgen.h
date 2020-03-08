@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "lexer.h"
+#include <stdarg.h>
 
 enum astnodetype{
     SUBSCR,

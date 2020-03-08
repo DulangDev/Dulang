@@ -11,6 +11,7 @@
 
 #include "astgen.h"
 #include "../objects/object.h"
+#include <stdint.h>
 typedef int16_t reg_t;
 enum opcodes{
     plus_op,
