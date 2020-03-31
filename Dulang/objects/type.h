@@ -2,48 +2,57 @@
 //  type.h
 //  Dulang
 //
-//  Created by Дмитрий Маслюков on 06.03.2020.
+//  Created by Дмитрий Маслюков on 25.03.2020.
 //  Copyright © 2020 Дмитрий Маслюков. All rights reserved.
 //
 
 #ifndef type_h
 #define type_h
 
-#include "object.h"
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct _basic_type{
+#define _BASIC_T const char * basic_name; size_t size; int typeid;
+    _BASIC_T
+} dul_type;
 
-#define DUL_FAST_ARGS object ** args, int argcount
-#define DUL_EMPTY_ARG 0, 0
-//  allocator is called only externally for type coersion, e.g. String(0)
-//  or Array(0, "str", a)
-typedef object *    (*allocator_func)   (DUL_FAST_ARGS);
-// destructor is called when object is no longer reachable
-typedef void        (*destructor_func)  (object*);
-typedef object *    (*copy_func)        (object*);
+typedef struct _parametrized_type{
+    _BASIC_T
+    dul_type * param_t;
+} dul_param_type;
 
-//returns boolean
-typedef value_t (*comparator) (const object *, const object *);
+typedef struct _layout_type{
+    _BASIC_T
+    int layout_size;
+    int layout_cap;
+    struct field{
+        const char * name;
+        dul_type * field_t;
+        //is null if non-static
+        void * staticValue;
+    } * layout;
+} dul_layout_type;
 
-typedef struct {
-    object * (*init_iter)(object*);
-    value_t (*num_subscr)(object*);
-    value_t (*str_subscr)(object*);
-} i_iterable;
+extern dul_type BOOL_T;
+extern dul_type INT_T;
+extern dul_type FLOAT_T;
 
-typedef struct type {
-    const char * name;
-    //typeid is required for fast type checks
-    char _typeid;
-    allocator_func allocator;
-    destructor_func destructor;
-    copy_func copy;
-    comparator comp;
-    i_iterable iteration_traits;
-} typeobject;
+dul_layout_type* create_layout_type(void);
+dul_param_type* create_param_type(dul_type * param_type);
+void add_entry_to_layout_type(dul_layout_type * t, struct field entry);
+void* get_static_value(dul_layout_type *, const char *);
+dul_type * get_field_type(dul_layout_type*, const char *);
+size_t layout_count_offset(dul_layout_type *, const char*);
+#define LAYOUT_NOT_CONTAINS_ENTRY 0
+#define LAYOUT_WRONG_ENTRY_TYPE 1
+#define LAYOUT_ENTRY_CONTAINS 2
+#define LAYOUT_ENTRY_UNDETERMINED 3
+int contains_entry(dul_layout_type * layout, struct field entry);
+const char * get_var_at_layout(dul_layout_type*layout, size_t offset);
+#define BOOL_ID 0
+#define INT_ID 1
+#define FLOAT_ID 2
+#define isNumericType(t)  ((t)==INT_ID || (t)==FLOAT_ID)
 
-#define STRING_TID 0
-#define ARRAY_TID 1
-#define OBJECT_TID 2
-#define TUPLE_TID 3
-#define CHANNEL_TID 4
 
 #endif /* type_h */

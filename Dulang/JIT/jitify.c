@@ -1,9 +1,9 @@
 //
-//  object.cpp
+//  jitify.c
 //  Dulang
 //
-//  Created by Дмитрий Маслюков on 06.03.2020.
+//  Created by Дмитрий Маслюков on 18.03.2020.
 //  Copyright © 2020 Дмитрий Маслюков. All rights reserved.
 //
 
-#include "object.h"
+#include "jitify.h"

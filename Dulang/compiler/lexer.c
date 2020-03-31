@@ -152,7 +152,13 @@ lexem getLexem(const char * str, long size,  char ** endpos){
         double number = strtod(reader, (char**)&reader);
         lexem l;
         l.type = NUMLITERAL;
-        memcpy(&l.value, &number, 8);
+        memcpy(&l.value, &number, sizeof(double));
+        if( number == (int64_t)number ){
+            l.type = NUMINTLITERAL;
+            int64_t i_val = number;
+            memcpy(&l.value, &i_val, sizeof(int64_t));
+        }
+        
         *endpos = (char*)reader;
         return l;
     }

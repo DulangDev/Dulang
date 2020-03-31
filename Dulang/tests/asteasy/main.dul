@@ -1,3 +1,15 @@
-a = 3 + 4
-write a / 7 + 8 * 6
+b = 9
+a = (4.5 * 7 * 7 - b / 10
+write a
+if a {
+    
+} else {
+    
+}
 
+IF
+   name:a
+   THEN:
+        ...
+    ELSE:
+        ...

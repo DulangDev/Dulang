@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "lexer.h"
+#include "../objects/type.h"
 #include <stdarg.h>
 
 enum astnodetype{
@@ -54,7 +55,9 @@ enum astnodetype{
     IMPORT,
     WHILE,
     IS,
-    EMPTY_STR
+    EMPTY_STR,
+    INTEGERLIT,
+    CAST_TO_FLOAT
 };
 static const char * asttype_repr [] = {
         "SUBSCR",
@@ -96,20 +99,26 @@ static const char * asttype_repr [] = {
         "IMPORT",
         "WHILE",
         "IS",
-        "EMPTY_STR"
+        "EMPTY_STR",
+        "INTEGER LITERAL",
+        "CAST_TO_FLOAT"
 };
 
 
 
 typedef struct _an{
     enum astnodetype type;
-    void * val;
+    char val [16];
     struct _an ** children;
     struct _an * parent;
-    int offset;
-    int registers_needed;
+    size_t offset;
+    size_t place_needed;
     int childrencount;
     int childrencap;
+    
+    dul_layout_type * name_table;
+    dul_type * node_type;
+    
 } astnode;
 
 typedef struct {
@@ -165,8 +174,12 @@ astnode * astparse_sube(lexem_iterator*, enum splexems close);
 
 astnode * astparse_xml_(lexem_iterator*);
 
-int count_register_count(astnode * node);
+size_t count_register_count(astnode * node);
 
 void print_astnode(astnode*, FILE*, int offset);
 
+void destroy_astnode(astnode * node);
+void prepare_table(astnode * root);
+void generate_types(astnode * root);
+int is_numeric_literal(astnode * node);
 #endif /* astgen_h */

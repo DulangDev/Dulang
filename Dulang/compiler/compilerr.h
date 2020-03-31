@@ -11,4 +11,10 @@
 
 void log_error_in_file(const char * fname, int offset, const char * errfmt, ...);
 
+typedef struct {
+    char desc [256];
+    int lineno;
+    int linepos;
+} compile_error;
+
 #endif /* compilerr_h */

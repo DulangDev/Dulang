@@ -10,7 +10,11 @@
 #define execeasy_h
 
 #include "frame.h"
+#include "coro_sheduler.h"
 #define INSTR_PER_ROT 1<<30
 void exec_ctx(context * ctx);
+static volatile int finished = 0;
+void* thread_executable(void * arg);
+void spawn_workers(int num);
 
 #endif /* execeasy_h */

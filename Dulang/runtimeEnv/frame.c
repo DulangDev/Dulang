@@ -17,7 +17,6 @@ context* init_context(void){
 }
 
 void start_frame(context * ctx, internal_code * code){
-    
     value_t * new_start = ctx->memory;
     if(ctx->current != ctx->frames)
     new_start = ctx->current->start + ctx->current->code->total_reg_max;
@@ -32,4 +31,8 @@ void start_frame(context * ctx, internal_code * code){
         0
     };
     *ctx->current = fr;
+}
+
+void unlink_frame(context * ctx){
+    
 }

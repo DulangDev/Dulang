@@ -14,7 +14,7 @@
 #include <string.h>
 #include "compiler/asttest.h"
 #include "compiler/bytecodegen.h"
-#include "runtimeEnv/execeasy.h"
+
 void test_lexer(){
     DIR *d;
     struct dirent *dir;
@@ -40,17 +40,10 @@ void test_lexer(){
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    //test_lexer();
-     char namebuf [2000];
-    sprintf(namebuf, "%s/dulang/Dulang/tests/asteasy/main.dul", getenv("HOME"));
-    test_ast_parse(namebuf);
-    internal_code code = new_code();
-    astnode * root = astparse_file("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
-    load_module(&code, root);
-    print_code(&code, stdout, 0);
-    context * ctx = init_context();
-    start_frame(ctx, &code);
-    exec_ctx(ctx);
+    
+    generate_code_from_source("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
+    
+  
     
     return 0;
 }

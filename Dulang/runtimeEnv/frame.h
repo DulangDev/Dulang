@@ -25,7 +25,9 @@ typedef struct {
     value_t * memory;
     size_t memory_cap;
     frame * current;
+    
 } context;
 context* init_context(void);
 void start_frame(context * ctx, internal_code * code);
+void unlink_frame(context * ctx);
 #endif /* frame_h */

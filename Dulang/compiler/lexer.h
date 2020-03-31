@@ -17,6 +17,7 @@ enum lexemtype {
     IDENTIFIER,
     STRLNGLITERAL,
     NUMLITERAL,
+    NUMINTLITERAL,
     SPECIAL,
     NONE,
     ERROR
@@ -75,7 +76,7 @@ enum splexems{
 
 //lexems tagged with $ are represented with their description, not formal text appearance
 
-static const char* ltext[] = {"->","$eol",".", "(", ")", "{", "}", "[", "]", ",", ":", "==", "!=", "<", ">", "<=", ">=", "+=", "-=", "*=", "/=", "=", "+", "-", "**", "*", "/", "or", "and", "not", "if", "for", "true", "false", "else", "fun", "$class", "async", "write", "import", "null", "in", "return", "while", "$indent", "$dedent"
+static const char* ltext[] = {"->","$eol",".", "(", ")", "{", "}", "[", "]", ",", ":", "==", "!=", "<", ">", "<=", ">=", "+=", "-=", "*=", "/=", "=", "+", "-", "**", "*", "/", "or", "and", "not", "if", "for", "true", "false", "else", "fun", "type", "async", "write", "import", "null", "in", "return", "while", "$indent", "$dedent"
 };
 
 typedef struct {

@@ -10,55 +10,109 @@
 #define bytecodegen_h
 
 #include "astgen.h"
-#include "../objects/object.h"
+#include "optimizer.h"
+#include "../objects/type.h"
 #include <stdint.h>
 typedef int16_t reg_t;
+// m suffix stands for immediate value
+// lm means left operand is immediate, rm means right is
+// for single operand like write it is only with or without m suffix
 enum opcodes{
-    plus_op,
-    minus_op,
-    mult_op,
-    div_op,
-    write_op
-    
+    iplus,
+    fplus,
+    ipluslm,
+    iplusrm,
+    fpluslm,
+    fplusrm,
+    iminus,
+    fminus,
+    iminuslm,
+    iminusrm,
+    fminuslm,
+    fminusrm,
+    imult,
+    fmult,
+    imultlm,
+    imultrm,
+    fmultlm,
+    fmultrm,
+    idiv,
+    fdiv,
+    idivlm,
+    idivrm,
+    fdivlm,
+    fdivrm,
+    iwrite_,
+    iwrite_m,
+    fwrite_,
+    fwrite_m,
+    istore,
+    fstore,
+    cast_to_float,
+    cast_to_float_m
 };
 
 static const char * opcode_repr [] = {
-    "plus",
-    "minus",
-    "mult",
-    "div",
-    "assign",
-    "write"
+    "integer add",
+    "float add",
+    "integer add lm",
+    "integer add rm",
+    "float add lm",
+    "float add rm",
+    "integer sub",
+    "float sub",
+    "integer sub lm",
+    "integer sub rm",
+    "float sub lm",
+    "float sub rm",
+    "integer mult",
+    "float mult",
+    "integer mult lm",
+    "integer mult rm",
+    "float mult lm",
+    "float mult rm",
+    "integer div",
+    "float div",
+    "integer div lm",
+    "integer div rm",
+    "float div lm",
+    "float div rm",
+    "integer write",
+    "integer write m",
+    "float write",
+    "float write m",
+    "store integer",
+    "store float",
+    "cast to float",
+    "cast to float m"
 };
 
 typedef struct {
-    char opcode;
-    reg_t first_arg;
-    reg_t second_arg;
-    reg_t third_arg;
-    void * inline_cache [3];
+    reg_t opcode;
+    long dest_arg;
+    long first_arg;
+    long second_arg;
 } op;
 
 
 
 typedef struct {
-    int name_count;
-    int name_cap;
-    char ** names;
+    dul_layout_type * layout;
     int op_count;
     int op_cap;
     op * ops;
-    int static_count;
+    void * static_pos;
     int static_cap;
-    value_t* statics;
+    void * statics;
     //sets to 0 after each statement
-    int curr_reg_max;
-    int total_reg_max;
+    size_t current_stack_offset;
+    size_t total_stack_space_need;
 } internal_code;
 
-internal_code new_code(void);
-void load_module(internal_code* code, astnode * root);
-reg_t load_node(internal_code * code, astnode * root, reg_t dest);
-void print_code(internal_code * code, FILE * output, int);
+//needs nametable to initialize
+internal_code new_code(astnode * root);
+void load_node(internal_code * code, astnode * node);
+internal_code generate_code_from_source(const char * fname);
+void print_code(FILE*fout, internal_code*c);
 
 #endif /* bytecodegen_h */
