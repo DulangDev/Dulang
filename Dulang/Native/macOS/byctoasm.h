@@ -13,7 +13,12 @@
 enum asm_opcodes{
     divsd,
     movq,
-    movsd
+    movsd,
+    mulsd,
+    addq,
+    subq,
+    mulq,
+    divq
 };
 
 typedef struct {
@@ -30,5 +35,6 @@ typedef struct{
 
 asm_bytearray create_asm_array(void);
 void add_instruction(asm_bytearray*, asm_instruction);
+void generate_instructions(asm_bytearray*, DulVMOP);
 
 #endif /* byctoasm_h */

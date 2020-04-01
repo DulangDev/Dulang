@@ -22,6 +22,7 @@
 		9DE73C50242223C9003C7252 /* jitify.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DE73C4F242223C9003C7252 /* jitify.c */; };
 		9DEDE2FD24322EA200C95CD0 /* byctoasm.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DEDE2FC24322EA200C95CD0 /* byctoasm.c */; };
 		9DEDE30024322EAE00C95CD0 /* asmwriter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DEDE2FF24322EAE00C95CD0 /* asmwriter.c */; };
+		9DEDE30624352B3200C95CD0 /* func_wrappers.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DEDE30524352B3200C95CD0 /* func_wrappers.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,12 +80,6 @@
 		9DE5F2D1240C6BF000C46AEF /* main.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.dul; sourceTree = "<group>"; };
 		9DE5F2D2240DB21900C46AEF /* asttype_pred.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asttype_pred.h; sourceTree = "<group>"; };
 		9DE5F2D3240DB21900C46AEF /* asttype_pred.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asttype_pred.c; sourceTree = "<group>"; };
-		9DE5F2D5240DC86B00C46AEF /* frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = frame.h; sourceTree = "<group>"; };
-		9DE5F2D6240DC86B00C46AEF /* frame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = frame.c; sourceTree = "<group>"; };
-		9DE5F2D8240E981300C46AEF /* coro_sheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coro_sheduler.h; sourceTree = "<group>"; };
-		9DE5F2D9240E981300C46AEF /* coro_sheduler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = coro_sheduler.c; sourceTree = "<group>"; };
-		9DE73C292415802E003C7252 /* execeasy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = execeasy.h; sourceTree = "<group>"; };
-		9DE73C2A2415802E003C7252 /* execeasy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = execeasy.c; sourceTree = "<group>"; };
 		9DE73C2C24158FDA003C7252 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; usesTabs = 1; };
 		9DE73C4D24222395003C7252 /* compiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = compiler.h; sourceTree = "<group>"; };
 		9DE73C4E242223C9003C7252 /* jitify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jitify.h; sourceTree = "<group>"; };
@@ -93,6 +88,8 @@
 		9DEDE2FC24322EA200C95CD0 /* byctoasm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = byctoasm.c; sourceTree = "<group>"; };
 		9DEDE2FE24322EAE00C95CD0 /* asmwriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asmwriter.h; sourceTree = "<group>"; };
 		9DEDE2FF24322EAE00C95CD0 /* asmwriter.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asmwriter.c; sourceTree = "<group>"; };
+		9DEDE30424352B3200C95CD0 /* func_wrappers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = func_wrappers.h; sourceTree = "<group>"; };
+		9DEDE30524352B3200C95CD0 /* func_wrappers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = func_wrappers.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,12 +192,8 @@
 		9D3823A023F2D83700413971 /* runtimeEnv */ = {
 			isa = PBXGroup;
 			children = (
-				9DE5F2D5240DC86B00C46AEF /* frame.h */,
-				9DE5F2D6240DC86B00C46AEF /* frame.c */,
-				9DE5F2D8240E981300C46AEF /* coro_sheduler.h */,
-				9DE5F2D9240E981300C46AEF /* coro_sheduler.c */,
-				9DE73C292415802E003C7252 /* execeasy.h */,
-				9DE73C2A2415802E003C7252 /* execeasy.c */,
+				9DEDE30424352B3200C95CD0 /* func_wrappers.h */,
+				9DEDE30524352B3200C95CD0 /* func_wrappers.c */,
 			);
 			path = runtimeEnv;
 			sourceTree = "<group>";
@@ -368,6 +361,7 @@
 				9DEDE2FD24322EA200C95CD0 /* byctoasm.c in Sources */,
 				9DE5F2CA240C621B00C46AEF /* asteasy.c in Sources */,
 				9D74E16223F9A74C000C7FA2 /* compilerr.c in Sources */,
+				9DEDE30624352B3200C95CD0 /* func_wrappers.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
