@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdint.h>
-
-void print_integer()
+void print_integer(void* val);
 
 #endif /* func_wrappers_h */

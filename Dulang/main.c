@@ -14,7 +14,8 @@
 #include <string.h>
 #include "compiler/asttest.h"
 #include "compiler/bytecodegen.h"
-
+#include "Native/macOS/asmexamples.h"
+#include <sandbox.h>
 void test_lexer(){
     DIR *d;
     struct dirent *dir;
@@ -37,12 +38,36 @@ void test_lexer(){
     }
     closedir(d);
 }
+static const char kSandboxPolicy[] = "(\n"
+"(version 1)\n"
+"(deny default)\n"
+"(deny dynamic-code-generation)\n"
+")";
+
+void enable_sandbox() {
+    char *err;
+    int rv = sandbox_init(kSandboxPolicy, 0, &err);
+    if (rv) {
+        fprintf(stderr, "sandbox_init error: %s\n", err);
+        exit(1);
+    }
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
+
+    internal_code c = generate_code_from_source("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
+    asmwriter writer = create_writer();
+    write_vm_code(&c, &writer);
+    asmfunc func = generate_from_writer(writer);
+    void * stack = malloc(1024);
+    printf("compiled %p\n", func);
     
-    generate_code_from_source("/Users/jernicozz/Dulang/Dulang/tests/asteasy/main.dul");
+    char * f_repr = (char*)func;
+    for(int i = 0; i < 10; i+=4){
+        printf("%X ", *(int*)(f_repr+i));
+    }
     
+    (*func)(c.statics, stack);
   
     
     return 0;

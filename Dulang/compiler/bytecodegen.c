@@ -14,7 +14,7 @@ internal_code new_code(astnode * root){
     internal_code code;
     code.layout = name_table;
     code.op_cap = 100;
-    code.ops = (DulVMOP*)malloc(sizeof(DulVMOP)*100);
+    code.ops = (DulIROP*)malloc(sizeof(DulIROP)*100);
     code.op_count = 0;
     //bytes
     code.static_cap = 1024;
@@ -24,10 +24,10 @@ internal_code new_code(astnode * root){
     return code;
 }
 
-static void write_op(internal_code * c, DulVMOP operand){
+static void write_op(internal_code * c, DulIROP operand){
     if(c->op_count ++ == c->op_cap){
         c->op_cap += 100;
-        c->ops = realloc(c->ops, (c->op_cap)*sizeof(DulVMOP));
+        c->ops = realloc(c->ops, (c->op_cap)*sizeof(DulIROP));
     }
     c->ops[c->op_count - 1] = operand;
 }
@@ -95,7 +95,7 @@ static long dest_preview_load(internal_code *c, astnode * node, long dest){
                 real_dest = dest;
             }
             type += configure_spec(node);
-            DulVMOP operation = {
+            DulIROP operation = {
                 type,
                 real_dest,
                 lhs,
@@ -126,7 +126,7 @@ static long dest_preview_load(internal_code *c, astnode * node, long dest){
             } else {
                 real_dest = dest;
             }
-            DulVMOP operation = {
+            DulIROP operation = {
                 type,
                 real_dest,
                 arg_place,
@@ -147,7 +147,7 @@ static long dest_preview_load(internal_code *c, astnode * node, long dest){
             if(node->children[0]->type == NUMLIT){
                 write_t = fwrite_m;
             }
-            DulVMOP operation = {
+            DulIROP operation = {
                 write_t,
                 arg_place
             };
@@ -160,7 +160,7 @@ static long dest_preview_load(internal_code *c, astnode * node, long dest){
             if(node->children[1]->type == NUMLIT){
                 //assume that types are properly casted
                 size_t arg_place = add_static(c, node->children[1]->val, sizeof(double));
-                DulVMOP operation = {
+                DulIROP operation = {
                     fstore,
                     rdest,
                     arg_place
@@ -170,7 +170,7 @@ static long dest_preview_load(internal_code *c, astnode * node, long dest){
             }
             if(node->children[1]->type == INTEGERLIT){
                 size_t arg_place = add_static(c, node->children[1]->val, sizeof(int64_t));
-                DulVMOP operation = {
+                DulIROP operation = {
                     istore,
                     rdest,
                     arg_place,
@@ -257,7 +257,7 @@ static void print_not_m_dest(char * buf, internal_code * c, size_t dest){
 }
 
 static void print_operation(FILE*fout, internal_code*c, int index){
-    DulVMOP opc = c->ops[index];
+    DulIROP opc = c->ops[index];
     fprintf(fout, "%d: %s ", index, opcode_repr[opc.opcode]);
     if(is_arithmetic(opc.opcode)){
         int immtype = imm_type(opc.opcode);

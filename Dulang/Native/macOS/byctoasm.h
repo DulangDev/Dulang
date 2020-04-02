@@ -35,6 +35,6 @@ typedef struct{
 
 asm_bytearray create_asm_array(void);
 void add_instruction(asm_bytearray*, asm_instruction);
-void generate_instructions(asm_bytearray*, DulVMOP);
+void generate_instructions(asm_bytearray*, DulIROP);
 
 #endif /* byctoasm_h */

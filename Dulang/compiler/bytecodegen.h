@@ -92,7 +92,7 @@ typedef struct {
     long dest_arg;
     long first_arg;
     long second_arg;
-} DulVMOP;
+} DulIROP;
 
 
 
@@ -100,7 +100,7 @@ typedef struct {
     dul_layout_type * layout;
     int op_count;
     int op_cap;
-    DulVMOP * ops;
+    DulIROP * ops;
     void * static_pos;
     int static_cap;
     void * statics;

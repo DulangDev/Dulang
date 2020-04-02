@@ -23,6 +23,7 @@
 		9DEDE2FD24322EA200C95CD0 /* byctoasm.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DEDE2FC24322EA200C95CD0 /* byctoasm.c */; };
 		9DEDE30024322EAE00C95CD0 /* asmwriter.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DEDE2FF24322EAE00C95CD0 /* asmwriter.c */; };
 		9DEDE30624352B3200C95CD0 /* func_wrappers.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DEDE30524352B3200C95CD0 /* func_wrappers.c */; };
+		9DEDE30924352BF300C95CD0 /* asmexamples.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DEDE30824352BF300C95CD0 /* asmexamples.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,7 @@
 		9D3823B423F5A3E700413971 /* function.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = function.h; sourceTree = "<group>"; };
 		9D3823B523F5A47300413971 /* dict.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dict.h; sourceTree = "<group>"; };
 		9D3823B623F5EBB000413971 /* dulang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dulang.h; sourceTree = "<group>"; };
+		9D4BEE212435420400D7DC0D /* Dulang.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Dulang.entitlements; sourceTree = "<group>"; };
 		9D74E15723F71B34000C7FA2 /* main.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.dul; sourceTree = "<group>"; };
 		9D74E15B23F720CC000C7FA2 /* somecode.dul */ = {isa = PBXFileReference; lastKnownFileType = text; path = somecode.dul; sourceTree = "<group>"; };
 		9D74E15C23F735B1000C7FA2 /* front */ = {isa = PBXFileReference; lastKnownFileType = text; path = front; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		9DEDE2FF24322EAE00C95CD0 /* asmwriter.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asmwriter.c; sourceTree = "<group>"; };
 		9DEDE30424352B3200C95CD0 /* func_wrappers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = func_wrappers.h; sourceTree = "<group>"; };
 		9DEDE30524352B3200C95CD0 /* func_wrappers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = func_wrappers.c; sourceTree = "<group>"; };
+		9DEDE30724352BF300C95CD0 /* asmexamples.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asmexamples.h; sourceTree = "<group>"; };
+		9DEDE30824352BF300C95CD0 /* asmexamples.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = asmexamples.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		9D38239523F2D7CA00413971 /* Dulang */ = {
 			isa = PBXGroup;
 			children = (
+				9D4BEE212435420400D7DC0D /* Dulang.entitlements */,
 				9DEDE2F924322E7C00C95CD0 /* Native */,
 				9DE73C4C2422237B003C7252 /* JIT */,
 				9D3823A223F2D9AA00413971 /* tests */,
@@ -285,6 +290,8 @@
 				9DEDE2FC24322EA200C95CD0 /* byctoasm.c */,
 				9DEDE2FE24322EAE00C95CD0 /* asmwriter.h */,
 				9DEDE2FF24322EAE00C95CD0 /* asmwriter.c */,
+				9DEDE30724352BF300C95CD0 /* asmexamples.h */,
+				9DEDE30824352BF300C95CD0 /* asmexamples.c */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -362,6 +369,7 @@
 				9DE5F2CA240C621B00C46AEF /* asteasy.c in Sources */,
 				9D74E16223F9A74C000C7FA2 /* compilerr.c in Sources */,
 				9DEDE30624352B3200C95CD0 /* func_wrappers.c in Sources */,
+				9DEDE30924352BF300C95CD0 /* asmexamples.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +488,8 @@
 		9D38239B23F2D7CA00413971 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Dulang/Dulang.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHPNX2SX7F;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -490,6 +500,8 @@
 		9D38239C23F2D7CA00413971 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Dulang/Dulang.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WHPNX2SX7F;
 				ENABLE_HARDENED_RUNTIME = YES;

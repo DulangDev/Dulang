@@ -28,7 +28,7 @@ void print_astnode(astnode*node, FILE*output, int offset){
     if( node->type == STRLIT || node->type == NAME ){
         fprintf(output, "%s", (char*)node->val);
     }
-    fprintf(output, " place needed: %d", node->place_needed);
+    fprintf(output, " place needed: %zu", node->place_needed);
     fputc('\n', output);
     for(int i = 0; i < node->childrencount; i++){
         print_astnode(node->children[i], output, offset + 4);

@@ -7,3 +7,6 @@
 //
 
 #include "func_wrappers.h"
+void print_integer(void* val){
+    printf("%lld\n", *(int64_t*)val);
+}
